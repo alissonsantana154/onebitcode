@@ -1,14 +1,16 @@
-h1 {
-  color: purple;
-  border: 2px solid orange;
+.yellow-text {
+  color: orange;
+}
+
+.big-text {
+  font-size: 40px;
+}
+
+#europa-text {
+  font-size: 10px;
+  color: blue;
 }
 
 li {
-  color: green;
-}
-
-body {
-  background-image: url("https://ilovetesla.com/wp-content/uploads/2021/08/Falcon-Heavy-B1052-B1053-LZ-landing-SpaceX-1-crop-c.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  color: grey;
 }
