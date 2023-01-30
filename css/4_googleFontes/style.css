@@ -10,3 +10,9 @@
 #text3 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serifs;
 }
+h1 {
+  margin: 45px auto 200px auto;
+  width: 15%;
+  border: 2px solid;
+  padding: 10px 20px 20px 10px;
+}
