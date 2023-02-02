@@ -7,9 +7,9 @@
   background-color: darkgray;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr 1fr;
   gap: 10px 15px;
-  grid-auto-rows: minmax(210px, 260px);
+  grid-auto-rows: minmax(310px, auto);
 }
 .item {
   border: 2px solid black;
