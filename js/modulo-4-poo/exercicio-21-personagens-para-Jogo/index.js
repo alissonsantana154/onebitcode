@@ -14,6 +14,7 @@ beatrice.attack(arthur);
 
 console.table({ arthur, beatrice, cain });
 
+cain.switchStance();
 cain.attack(arthur);
 arthur.heal(arthur);
 beatrice.attack(cain);
