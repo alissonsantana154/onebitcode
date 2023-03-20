@@ -9,8 +9,6 @@ const Planets = () => {
       <Planet />
       <Planet />
       <Planet />
-      <Planet />
-      <Planet />
     </Fragment>
   );
 };
