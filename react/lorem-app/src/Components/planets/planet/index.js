@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import GrayImg from "../../shared/gray_img";
 import DescriptionWithLink from "../../shared/description_with_link";
 
@@ -8,50 +8,38 @@ async function getSatellites(id) {
   return data;
 }
 
-class Planet extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      satellites: [],
-    };
-  }
+const Planet = (props) => {
+  const [satellites, setSatellites] = useState([]);
 
-  componentDidMount() {
-    getSatellites(this.props.id).then((data) => {
-      this.setState((state) => ({
-        satellites: data["satellites"],
-      }));
+  useEffect(() => {
+    getSatellites(props.id).then((data) => {
+      setSatellites(data["satellites"]);
     });
-  }
+  }, []);
 
-  render() {
-    let title;
-    if (this.props.title_with_underline)
-      title = (
-        <u>
-          <h4>{this.props.name}</h4>
-        </u>
-      );
-    else title = <h4>{this.props.name}</h4>;
-
-    return (
-      <div>
-        {title}
-        <DescriptionWithLink
-          description={this.props.description}
-          link={this.props.link}
-        />
-        <GrayImg img_url={this.props.img_url} gray={this.props.gray} />
-        <h4>Satélites</h4>
-        <ul>
-          {this.state.satellites.map((satellite, index) => (
-            <li key={index}>{satellite.name}</li>
-          ))}
-        </ul>
-        <hr />
-      </div>
+  let title;
+  if (props.title_with_underline)
+    title = (
+      <u>
+        <h4>{props.name}</h4>
+      </u>
     );
-  }
-}
+  else title = <h4>{props.name}</h4>;
+
+  return (
+    <div>
+      {title}
+      <DescriptionWithLink description={props.description} link={props.link} />
+      <GrayImg img_url={props.img_url} gray={props.gray} />
+      <h4>Satélites</h4>
+      <ul>
+        {satellites.map((satellite, index) => (
+          <li key={index}>{satellite.name}</li>
+        ))}
+      </ul>
+      <hr />
+    </div>
+  );
+};
 
 export default Planet;
