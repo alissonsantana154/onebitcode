@@ -1,10 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import GrayImg from "../../shared/gray_img";
 import DescriptionWithLink from "../../shared/description_with_link";
 
 const Planet = (props) => {
-  const names = ["a", "b", "c", "d", "e", "f"];
-
   let title;
   if (props.title_with_underline)
     title = (

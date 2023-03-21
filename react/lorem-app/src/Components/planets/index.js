@@ -1,28 +1,26 @@
 import React, { Fragment } from "react";
 import Planet from "./planet";
 
+async function getPlanets() {
+  let response = await fetch("http://localhost:3000/api/planets.json");
+  let data = await response.json();
+  return data;
+}
+
 class Planets extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Planets: [
-        {
-          name: "Mercúrio",
-          description:
-            "Mercúrio é um metal líquido à temperatura ambiente, conhecido desde os tempos da Grécia Antiga. Também é conhecido como hidrargírio,[1] hidrargiro,[1] azougue[2] e prata-viva, entre outras denominações. Seu nome homenageia o deus romano Mercúrio, que era o mensageiro dos deuses. Essa homenagem é devida à fluidez do metal. O símbolo Hg vem do grego latinizado 'hydrargyrum' que significa prata líquida.",
-          img_url:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/420px-Mercury_in_color_-_Prockter07-edit1.jpg",
-          link: "https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta)",
-        },
-        {
-          name: "Plutão",
-          description:
-            "Plutão, formalmente designado 134340 Plutão (símbolos: ⯓ e ♇) é um planeta anão do Sistema Solar e o nono maior e décimo mais massivo objeto observado diretamente orbitando o Sol. Originalmente classificado como um planeta, Plutão é atualmente o maior membro conhecido do cinturão de Kuiper,[11] uma região de corpos além da órbita de Netuno.",
-          img_url:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/420px-Pluto_in_True_Color_-_High-Res.jpg",
-        },
-      ],
+      Planets: [],
     };
+  }
+
+  componentDidMount() {
+    getPlanets().then((data) => {
+      this.setState((state) => ({
+        Planets: data["planets"],
+      }));
+    });
   }
 
   removeLast = () => {
