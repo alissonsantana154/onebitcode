@@ -13,7 +13,6 @@ const Planets = () => {
       <hr />
       <Planet
         name="Mercúrio"
-        description="Mercúrio é um dos quatro planetas telúricos do Sistema Solar e seu corpo é rochoso como a Terra. É o menor planeta do sistema solar, com um raio equatorial de 2 439,7 km."
         img_url="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/420px-Mercury_in_color_-_Prockter07-edit1.jpg"
         link="https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta)"
         title_with_underline={true}
