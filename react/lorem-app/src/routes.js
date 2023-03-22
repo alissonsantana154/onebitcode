@@ -7,7 +7,7 @@ const Rotas = () => (
   <BrowserRouter>
     <Routes>
       <Route exact path="/" Component={PlanetsScreen} />
-      <Route exact path="/planet" Component={PlanetScreen} />
+      <Route exact path="/planet/:id" Component={PlanetScreen} />
     </Routes>
   </BrowserRouter>
 );
