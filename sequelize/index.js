@@ -1,17 +1,27 @@
 (async () => {
   const Planet = require("./models/planet");
-  /*
+
   const newPlanet = await Planet.create({
-    name: "Venus",
-    position: 5,
+    name: "Marte",
+    position: 2,
   });
-*/
+  /*
 
   const seePlanets = await Planet.findAll({
     where: {
-      name: "Venus",
-    },
+
+      name"venus",
+    }
   });
 
-  console.log(seePlanets);
+  const updatePlanets = await Planet.findByPk(1);
+  updatePlanets.name = "Terra";
+  await updatePlanets.save();
+*/
+
+  // const deletePlanets = await Planet.findByPk(3);
+
+  console.log(newPlanet);
+
+  // await deletePlanets.destroy();
 })();
