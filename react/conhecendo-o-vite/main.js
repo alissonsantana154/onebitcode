@@ -6,6 +6,7 @@ import { setupCounter } from './counter.js'
 document.querySelector('#app').innerHTML = `
   <h2>Ola,mundo mundo</>
   <div>
+
     <a href="https://vitejs.dev" target="_blank">
       <img src="${viteLogo}" class="logo" alt="Vite logo" />
     </a>
