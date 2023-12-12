@@ -1,10 +1,13 @@
+import { Fragment } from "react"
 import Card from "./components/Card"
 
 function App() {
   return (
-    <div className="app">
+    <Fragment className="app">
       <Card />
-    </div>
+      <Card />
+      <Card />
+    </Fragment>
   )
 }
 
