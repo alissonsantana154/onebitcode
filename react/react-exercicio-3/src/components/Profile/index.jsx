@@ -1,18 +1,26 @@
+import LinkButton from "../LinkButton"
+import Title from "../Title"
+import ProfileSection from "./ProfileSection"
 import styles from "./styles.module.css"
 
 export default function Profile(props) {
   return (
     <div className={styles.container}>
       <img className={styles.avatar} src={props.avatar} alt={props.name} />
-      <h2 className={styles.name}>{props.name}</h2>
-      <div>{props.bio}</div>
-      <div>{props.phone}</div>
-      <div>{props.email}</div>
+      <Title>
+        <span>{props.name}</span>
+        <button>Follow</button>
+      </Title>
+      <ProfileSection>{props.bio}</ProfileSection>
+      <ProfileSection>{props.phone}</ProfileSection>
+      <ProfileSection>{props.email}</ProfileSection>
+      <ProfileSection>
       <div className={styles.links}>
-        <a href={props.githubUrl} target="_blank" rel="noreferrer">GitHub</a>
-        <a href={props.linkedinUrl} target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href={props.twitterUrl} target="_blank" rel="noreferrer">Twitter</a>
+        <LinkButton href={props.githubUrl} rel="noreferrer">GitHub</LinkButton>
+        <LinkButton href={props.linkedinUrl} rel="noreferrer">LinkedIn</LinkButton>
+        <LinkButton href={props.twitterUrl}  rel="noreferrer">Twitter</LinkButton>
       </div>
+      </ProfileSection>
     </div>
   )
 }
